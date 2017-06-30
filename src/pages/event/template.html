@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <bucket-bar></bucket-bar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <event-card [eventCard]="currentEventCard" *ngIf="currentEventCard"></event-card>
+</ion-content>
+
+<ion-footer>
+  <ion-tabs>
+    <ion-tab tabIcon="heart"></ion-tab>
+
+  </ion-tabs>
+</ion-footer>

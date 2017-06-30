@@ -1,16 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import {BrowserModule} from '@angular/platform-browser';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {MyApp} from './app.component';
+import {BackendService} from '../services/backend.service';
+import {BucketBarComponent} from '../components/bucket-bar/component';
+import {EventCardComponent} from '../components/event-card/component';
+import {EventPage} from '../pages/event/page';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    EventPage,
+    BucketBarComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
@@ -19,12 +24,14 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    EventPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BackendService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
