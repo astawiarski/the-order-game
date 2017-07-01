@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title align="center">The Order</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button full icon-left disabled>
+    <ion-icon name="infinite"></ion-icon>Kontynuuj
+  </button>
+
+  <button ion-button full icon-left color="secondary" (click)="startGame()">
+    <ion-icon name="contact"></ion-icon>Nowa Gra
+  </button>
+</ion-content>
+
+<ion-footer no-border align="center">
+  <ion-toolbar>
+    <button ion-button icon-left outline color="dark" [navPush]="aboutPage"><ion-icon name="information-circle"></ion-icon>Info</button>
+  </ion-toolbar>
+</ion-footer>

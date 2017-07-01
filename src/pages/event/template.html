@@ -1,16 +1,30 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
     <bucket-bar></bucket-bar>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <event-card [eventCard]="currentEventCard" *ngIf="currentEventCard"></event-card>
+
+  <ion-card align="center" *ngIf="eventCard">
+    <ion-card-header>
+      <h3>{{eventCard.name}}</h3>
+    </ion-card-header>
+
+    <ion-img align=""></ion-img>
+
+    <ion-card-content>
+      <p>{{eventCard.description}}</p>
+    </ion-card-content>
+
+    <button ion-button *ngFor="let choice of eventCard.choices" (click)="submitChoice(choice)">{{choice.name}}</button>
+    </ion-card>
+
 </ion-content>
 
-<ion-footer>
-  <ion-tabs>
-    <ion-tab tabIcon="heart"></ion-tab>
-
-  </ion-tabs>
+<ion-footer no-border align="center">
+  <ion-toolbar>
+    <button ion-button icon-left color="primary" [navPush]="shopPage"><ion-icon name="basket"></ion-icon>Sklep</button>
+    <button ion-button icon-left outline color="dark" (click)="saveAndExit()"><ion-icon name="log-out"></ion-icon>Wyloguj</button>
+  </ion-toolbar>
 </ion-footer>

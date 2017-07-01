@@ -3,14 +3,16 @@ import {Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import {EventPage} from '../pages/event/page';
-import {BackendService} from "../services/backend.service";
+import {BackendService} from '../services/backend.service';
+
+import {StartPage} from '../pages/start/page';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = EventPage;
+
+  rootPage: any = StartPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private backendService: BackendService) {
     platform.ready().then(() => {
@@ -21,4 +23,3 @@ export class MyApp {
     });
   }
 }
-
