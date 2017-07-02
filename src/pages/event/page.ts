@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {LoadingController, NavController} from 'ionic-angular';
 
 import {BackendService} from "../../services/backend.service";
@@ -24,7 +24,7 @@ export class EventPage {
   ionViewDidEnter(): void {
     let loader = this.loadingCtrl.create({
       content: "Oczekiwanie na szpiegów...",
-      duration: 1500
+      duration: 1000
     });
     loader.present();
 
@@ -37,7 +37,7 @@ export class EventPage {
   submitChoice(choice: ChoiceCard): void {
     let loader = this.loadingCtrl.create({
       content: "Wydawanie rozkazu...",
-      duration: 1000
+      duration: 800
     });
     loader.present();
 
